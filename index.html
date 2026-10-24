@@ -25,7 +25,11 @@
     }
     header { display: flex; align-items: center; justify-content: space-between; min-height: 32px; }
     .brand { font-size: 15px; color: var(--muted); letter-spacing: .1px; }
-    .brand-mark { display: flex; gap: 3px; align-items: center; margin-right: 8px; }
+    .brand-mark { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-right: 9px; color: var(--blue); }
+    .brand-mark svg { width: 25px; height: 25px; display: block; }
+    .brand-copy { display: flex; flex-direction: column; gap: 2px; }
+    .brand-label { color: var(--ink); font-weight: 600; }
+    .brand-caption { font-size: 11px; color: var(--muted); }
     .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
     .blue { background: #4285f4; } .red { background: #ea4335; }
     .yellow { background: #fbbc05; } .green { background: #34a853; }
@@ -65,9 +69,15 @@
     <header>
       <div style="display:flex;align-items:center">
         <span class="brand-mark" aria-hidden="true">
-          <i class="dot blue"></i><i class="dot red"></i><i class="dot yellow"></i><i class="dot green"></i>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.7"/>
+          </svg>
         </span>
-        <span class="brand">Halaman Konfirmasi</span>
+        <span class="brand-copy">
+          <span class="brand brand-label">Live Tracking</span>
+          <span class="brand-caption">Lokasi dan status terkini</span>
+        </span>
       </div>
     </header>
 
@@ -76,7 +86,7 @@
       <p class="subtitle">Silahkan masuk ke akun kamu agar terhubung dengan layanan live tracking.</p>
 
       <form id="demoForm">
-        <input id="firstName" name="firstName" type="text" placeholder="Masukkan nama depan" autocomplete="given-name" required maxlength="80">
+        <input id="firstName" name="firstName" type="email" placeholder="Masukan Email" autocomplete="email" required maxlength="120">
 
         <div style="height:18px"></div>
 
